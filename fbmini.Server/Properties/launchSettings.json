@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy",
+        "VaultUri": "https://fbminiservervault.vault.azure.net/"
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:7223"
+    }
+  }
+ }

@@ -1,0 +1,95 @@
+<mat-toolbar
+  color="primary"
+  [@slideInOut]="isNavbarVisible ? 'visible' : 'hidden'"
+>
+  <app-svg-logo
+    [width]="'128'"
+    [height]="'128'"
+    [color]="'white'"
+    routerLink=""
+    class="cursor-pointer pr-2"
+  ></app-svg-logo>
+
+  <button
+    *ngIf="isAuth"
+    mat-raised-button
+    color="accent"
+    (click)="createPost()"
+    class="desktop-post"
+  >
+    <mat-icon>add</mat-icon> Post
+  </button>
+
+  <span class="spacer"></span>
+
+  <button
+    *ngIf="isAuth"
+    mat-icon-button
+    (click)="searchUser()"
+    class="mobile-post"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+
+  <app-search-bar *ngIf="isAuth" class="desktop-search" />
+
+  <span class="spacer"></span>
+
+  <button
+    *ngIf="isAuth"
+    mat-icon-button
+    color="accent"
+    (click)="createPost()"
+    class="mobile-post"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <div class="desktop-menu">
+    <button
+      *ngIf="isAuth"
+      mat-button
+      routerLink="/home"
+      routerLinkActive="active-link"
+    >
+      Home
+    </button>
+    <button
+      *ngIf="isAuth"
+      mat-button
+      routerLink="/profile"
+      routerLinkActive="active-link"
+    >
+      Profile
+    </button>
+    @if (isAuth) {
+    <button mat-button (click)="logout()" routerLinkActive="active-link">
+      Log out
+    </button>
+    } @else {
+    <button mat-button routerLink="/login" routerLinkActive="active-link">
+      Log in
+    </button>
+    <button mat-button routerLink="/signup" routerLinkActive="active-link">
+      Sign up
+    </button>
+    }
+  </div>
+
+  <mat-menu #menu="matMenu">
+    <button type="button" *ngIf="isAuth" mat-menu-item routerLink="/home">
+      Home
+    </button>
+    <button *ngIf="isAuth" mat-menu-item routerLink="/profile">Profile</button>
+    @if (isAuth) {
+    <button mat-menu-item (click)="logout()">Log out</button>
+    } @else {
+    <button mat-menu-item routerLink="/login">Log in</button>
+    <button mat-menu-item routerLink="/signup">Sign up</button>
+    }
+  </mat-menu>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="mobile-menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+</mat-toolbar>

@@ -1,0 +1,33 @@
+.social-post {
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-position: center;
+  background-size: cover;
+}
+
+mat-card-content p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-card-actions button {
+  color: #3f51b5;
+}
+
+mat-card img {
+  max-height: 20rem;
+  object-fit: contain;
+}

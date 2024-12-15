@@ -1,0 +1,44 @@
+section {
+  --bg-header: #242526;
+  --bg-body: #18191a;
+  --bg-gradient2-from: #764ba2;
+  --bg-gradient2-to: #667eea;
+  --bg-gradient3-from: #09203f;
+  --bg-gradient3-to: #537895;
+}
+
+:host {
+  flex-grow: 1;
+}
+
+.profile-picture-container {
+  display: flex;
+  gap: 1.25rem;
+  position: relative;
+  width: 100%;
+  height: 12rem;
+}
+
+.profile-picture {
+  position: absolute;
+  z-index: 10;
+  top: -5rem;
+  left: 4rem;
+}
+
+@media (max-width: 768px) {
+  .profile-picture {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  /* .profile-picture-container {
+    align-content: center;
+  } */
+  /* .profile-picture-container {
+    flex-direction: column;
+    bottom: -20rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  } */
+}

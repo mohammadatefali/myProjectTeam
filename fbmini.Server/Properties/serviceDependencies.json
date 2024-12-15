@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "secrets": {
+      "type": "secrets",
+      "connectionId": "VaultUri",
+      "dynamicId": null
+    },
+    "secrets1": {
+      "type": "secrets",
+      "dynamicId": null
+    }
+  }
+}
